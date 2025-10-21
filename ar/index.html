@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CityPulse | اكتشف ما يحدث حولك</title>
+    <link rel="icon" href="assets/img/logo.png" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/langSwap.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css">
+
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="./index.html">
+                <i class="fas fa-city me-2"></i>CityPulse
+            </a>
+
+            <!-- Language Selector -->
+            <div class="language-dropdown dropdown">
+                <button class="language-selector dropdown-toggle d-flex align-items-center" type="button"
+                    id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="https://flagcdn.com/w40/sy.png" alt="syria">
+                    <span>العربية</span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                    <li>
+                        <a class="dropdown-item language-option d-flex align-items-center" href="#" data-lang="ar">
+                            <img src="https://flagcdn.com/w40/sy.png" alt="syria">
+                            <span>العربية</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item language-option d-flex align-items-center" href="#" data-lang="en">
+                            <img src="https://flagcdn.com/w40/us.png" alt="usa">
+                            <span>English</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="./index.html">الرئيسية</a></li>
+                    <li class="nav-item"><a class="nav-link" href="events.html">الفعاليات</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">من نحن</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">اتصل بنا</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Add this CDN for flag icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/6.6.6/css/flag-icons.min.css">
+    <!-- ===== FLOATING ACTION BUTTONS ===== -->
+    <div class="floating-buttons">
+        <button class="floating-btn dark-mode-toggle" id="darkModeToggle" title="تبديل الوضع الليلي">
+            <i class="fas fa-moon"></i>
+        </button>
+        <button class="floating-btn scroll-to-top" id="scrollToTop" title="الانتقال إلى الأعلى">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+        <button class="floating-btn scroll-to-bottom" id="scrollToBottom" title="الانتقال إلى الأسفل">
+            <i class="fas fa-chevron-down"></i>
+        </button>
+    </div>
+    <!-- ===== HERO SLIDER (Syrian Events) ===== -->
+    <section id="hero" class="mt-5 pt-4">
+        <div id="featuredEvents" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+
+                <!-- Event 1 -->
+                <div class="carousel-item active">
+                    <a href="event.html?event=1"><img src="assets/img/event1.jpg" class="d-block w-100 hero-img"
+                            alt="Event 1"></a>
+                    <div class="carousel-caption">
+                        <h2>ليلة الجاز في دمشق</h2>
+                        <p>استمتع بليلة حية من موسيقى الجاز في قلب دمشق.</p>
+                    </div>
+                </div>
+
+                <!-- Event 2 -->
+                <div class="carousel-item">
+                    <a href="event.html?event=2"><img src="assets/img/event2.jpg" class="d-block w-100 hero-img"
+                            alt="Event 2"></a>
+                    <div class="carousel-caption">
+                        <h2>معرض حماة للفن والثقافة</h2>
+                        <p>استكشف الروح الفنية لسوريا من خلال اللوحات والحرف اليدوية والثقافة.</p>
+                    </div>
+                </div>
+
+                <!-- Event 3 -->
+                <div class="carousel-item">
+                    <a href="event.html?event=3"><img src="assets/img/event3.jpg" class="d-block w-100 hero-img"
+                            alt="Event 3"></a>
+                    <div class="carousel-caption">
+                        <h2>منتدى حلب التكنولوجي 2025</h2>
+                        <p>ناقش الابتكارات والتحول الرقمي في المشهد التكنولوجي السوري.</p>
+                    </div>
+                </div>
+
+                <!-- Event 4 -->
+                <div class="carousel-item">
+                    <a href="event.html?event=4"><img src="assets/img/event4.jpg" class="d-block w-100 hero-img"
+                            alt="Event 4"></a>
+                    <div class="carousel-caption">
+                        <h2>ماراثون مدينة حماة</h2>
+                        <p>اركض على ضفاف نهر العاصي واستمتع بروح المجتمع.</p>
+                    </div>
+                </div>
+
+                <!-- Event 5 -->
+                <div class="carousel-item">
+                    <a href="event.html?event=5"><img src="assets/img/event5.jpg" class="d-block w-100 hero-img"
+                            alt="Event 5"></a>
+                    <div class="carousel-caption">
+                        <h2>مهرجان دمشق للطعام</h2>
+                        <p>تذوق الأطباق السورية التقليدية من أفضل الطهاة المحليين.</p>
+                    </div>
+                </div>
+
+                <!-- Event 6 -->
+                <div class="carousel-item">
+                    <a href="event.html?event=6"><img src="assets/img/event6.jpg" class="d-block w-100 hero-img"
+                            alt="Event 6"></a>
+                    <div class="carousel-caption">
+                        <h2>حفلة الروك في اللاذقية</h2>
+                        <p>اشعر بتلاقي الأمواج والموسيقى على مسرح الساحل اللاذقي.</p>
+                    </div>
+                </div>
+
+                <!-- Event 7 -->
+                <div class="carousel-item">
+                    <a href="event.html?event=7"><img src="assets/img/event7.jpg" class="d-block w-100 hero-img"
+                            alt="Event 7"></a>
+                    <div class="carousel-caption">
+                        <h2>معرض النحت الحديث - دمشق</h2>
+                        <p>جرب الأعمال الإبداعية لنحاتين سوريين معاصرين.</p>
+                    </div>
+                </div>
+
+                <!-- Event 8 -->
+                <div class="carousel-item">
+                    <a href="event.html?event=8"><img src="assets/img/event8.jpg" class="d-block w-100 hero-img"
+                            alt="Event 8"></a>
+                    <div class="carousel-caption">
+                        <h2>هاكاثون سوريا 2025</h2>
+                        <p>ابتكر وتعاون مع ألمع المطورين الشباب.</p>
+                    </div>
+                </div>
+
+                <!-- Event 9 -->
+                <div class="carousel-item">
+                    <a href="event.html?event=9"><img src="assets/img/event9.jpg" class="d-block w-100 hero-img"
+                            alt="Event 9"></a>
+                    <div class="carousel-caption">
+                        <h2>كأس طرطوس للكرة الطائرة الشاطئية</h2>
+                        <p>انضم إلى المنافسة أو استمتع بأجواء الصيف بجانب البحر.</p>
+                    </div>
+                </div>
+
+                <!-- Event 10 -->
+                <div class="carousel-item">
+                    <a href="event.html?event=10"><img src="assets/img/event10.jpg" class="d-block w-100 hero-img"
+                            alt="Event 10"></a>
+                    <div class="carousel-caption">
+                        <h2>سوق النباتيين - دمشق</h2>
+                        <p>اكتشف إبداعات نباتية لذيذة وصحية من البائعين المحليين.</p>
+                    </div>
+                </div>
+
+                <!-- Event 11 -->
+                <div class="carousel-item">
+                    <a href="event.html?event=11"><img src="assets/img/event11.jpg" class="d-block w-100 hero-img"
+                            alt="Event 11"></a>
+                    <div class="carousel-caption">
+                        <h2>سينما الهواء الطلق - قلعة حلب</h2>
+                        <p>شاهد الأفلام الكلاسيكية تحت النجوم بالقرب من المعلم التاريخي السوري.</p>
+                    </div>
+                </div>
+
+                <!-- Event 12 -->
+                <div class="carousel-item">
+                    <a href="event.html?event=12"><img src="assets/img/event12.jpg" class="d-block w-100 hero-img"
+                            alt="Event 12"></a>
+                    <div class="carousel-caption">
+                        <h2>لقاء الشركات الناشئة - حمص</h2>
+                        <p>تواصل مع رواد الأعمال والمستثمرين السوريين لمشاريع مستقبلية.</p>
+                    </div>
+                </div>
+
+                <!-- Event 13 -->
+                <div class="carousel-item">
+                    <a href="event.html?event=13"><img src="assets/img/event13.jpg" class="d-block w-100 hero-img"
+                            alt="Event 13"></a>
+                    <div class="carousel-caption">
+                        <h2>سوق المزارعين - حماة</h2>
+                        <p>منتجات محلية طازجة وحرف يدوية ومأكولات منزلية لذيذة.</p>
+                    </div>
+                </div>
+
+                <!-- Event 14 -->
+                <div class="carousel-item">
+                    <a href="event.html?event=14"><img src="assets/img/event14.jpg" class="d-block w-100 hero-img"
+                            alt="Event 14"></a>
+                    <div class="carousel-caption">
+                        <h2>سباق الخير - دمشق</h2>
+                        <p>ادعم القضايا المحلية بينما تبقى نشطًا مع مجتمعك.</p>
+                    </div>
+                </div>
+
+                <!-- Event 15 -->
+                <div class="carousel-item">
+                    <a href="event.html?event=15"><img src="assets/img/event15.jpg" class="d-block w-100 hero-img"
+                            alt="Event 15"></a>
+                    <div class="carousel-caption">
+                        <h2>ورشة التصوير الفوتوغرافي - حلب</h2>
+                        <p>أتقن تقنيات التصوير الفوتوغرافي مع فنانين سوريين محترفين.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Carousel Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#featuredEvents" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#featuredEvents" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </section>
+
+    <!-- ===== FILTERABLE EVENTS ===== -->
+    <section id="filters" class="py-5 text-center">
+        <div class="container">
+            <h3 class="mb-4 fw-bold">اكتشف الفعاليات حسب التصنيف</h3>
+            <div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
+                <button class="btn btn-outline-primary active" data-filter="all">الكل</button>
+                <button class="btn btn-outline-primary" data-filter="music">موسيقى</button>
+                <button class="btn btn-outline-primary" data-filter="art">فن</button>
+                <button class="btn btn-outline-primary" data-filter="tech">تكنولوجيا</button>
+                <button class="btn btn-outline-primary" data-filter="sports">رياضة</button>
+                <button class="btn btn-outline-primary" data-filter="food">طعام</button>
+            </div>
+
+            <div class="events-grid">
+                <!-- All events here with links to event.html -->
+                <div class="event-card" data-category="music"><a href="event.html?event=1"><img
+                            src="assets/img/event1.jpg" alt=""></a>
+                    <h5><a href="event.html?event=1">ليلة دمشق الموسيقية</a></h5>
+                </div>
+                <div class="event-card" data-category="art"><a href="event.html?event=2"><img
+                            src="assets/img/event2.jpg" alt=""></a>
+                    <h5><a href="event.html?event=2">معرض حماة للفن والثقافة</a></h5>
+                </div>
+                <div class="event-card" data-category="tech"><a href="event.html?event=3"><img
+                            src="assets/img/event3.jpg" alt=""></a>
+                    <h5><a href="event.html?event=3">منتدى حلب التكنولوجي 2025</a></h5>
+                </div>
+                <div class="event-card" data-category="sports"><a href="event.html?event=4"><img
+                            src="assets/img/event4.jpg" alt=""></a>
+                    <h5><a href="event.html?event=4">ماراثون مدينة حماة</a></h5>
+                </div>
+                <div class="event-card" data-category="food"><a href="event.html?event=5"><img
+                            src="assets/img/event5.jpg" alt=""></a>
+                    <h5><a href="event.html?event=5">مهرجان دمشق للطعام</a></h5>
+                </div>
+                <div class="event-card" data-category="music"><a href="event.html?event=6"><img
+                            src="assets/img/event6.jpg" alt=""></a>
+                    <h5><a href="event.html?event=6">حفلة الروك في اللاذقية</a></h5>
+                </div>
+                <div class="event-card" data-category="art"><a href="event.html?event=7"><img
+                            src="assets/img/event7.jpg" alt=""></a>
+                    <h5><a href="event.html?event=7">معرض النحت الحديث - دمشق</a></h5>
+                </div>
+                <div class="event-card" data-category="tech"><a href="event.html?event=8"><img
+                            src="assets/img/event8.jpg" alt=""></a>
+                    <h5><a href="event.html?event=8">هاكاثون سوريا 2025</a></h5>
+                </div>
+                <div class="event-card" data-category="sports"><a href="event.html?event=9"><img
+                            src="assets/img/event9.jpg" alt=""></a>
+                    <h5><a href="event.html?event=9">كأس طرطوس للكرة الطائرة الشاطئية</a></h5>
+                </div>
+                <div class="event-card" data-category="food"><a href="event.html?event=10"><img
+                            src="assets/img/event10.jpg" alt=""></a>
+                    <h5><a href="event.html?event=10">سوق النباتيين - دمشق</a></h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== LATEST EVENTS ===== -->
+    <section id="latest-events" class="pb-5">
+        <div class="container">
+            <h3 class="text-center mb-4 fw-bold">أحدث الفعاليات في المدينة</h3>
+            <div class="events-grid">
+                <div class="event-card"><a href="event.html?event=11"><img src="assets/img/event11.jpg" alt=""></a>
+                    <h5><a href="event.html?event=11">سينما الهواء الطلق - قلعة حلب</a></h5>
+                </div>
+                <div class="event-card"><a href="event.html?event=12"><img src="assets/img/event12.jpg" alt=""></a>
+                    <h5><a href="event.html?event=12">لقاء الشركات الناشئة - حمص</a></h5>
+                </div>
+                <div class="event-card"><a href="event.html?event=13"><img src="assets/img/event13.jpg" alt=""></a>
+                    <h5><a href="event.html?event=13">سوق المزارعين - حماة</a></h5>
+                </div>
+                <div class="event-card"><a href="event.html?event=14"><img src="assets/img/event14.jpg" alt=""></a>
+                    <h5><a href="event.html?event=14">سباق الخير - دمشق</a></h5>
+                </div>
+                <div class="event-card"><a href="event.html?event=15"><img src="assets/img/event15.jpg" alt=""></a>
+                    <h5><a href="event.html?event=15">ورشة التصوير الفوتوغرافي - حلب</a></h5>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ===== TEAM SECTION ===== -->
+    <section class="team-section">
+        <div class="container">
+            <div class="section-card">
+                <h2 class="text-center mb-5">تعرف على فريقنا</h2>
+                <div class="row g-4">
+                    <!-- Randa Deeb -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card team-card h-100">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                                class="card-img-top team-img" alt="Randa Deeb">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">راندا ديب</h5>
+                                <p class="card-text text-muted">مصممة واجهات المستخدم</p>
+                                <span class="username">randa_284420</span>
+                                <p class="small mt-2">مصممة مبدعة تركز على إنشاء تجارب مستخدم بديهية وجميلة.</p>
+                                <div class="social-icons">
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fab fa-dribbble"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mohammed Ghalawnji -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card team-card h-100">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                                class="card-img-top team-img" alt="Mohammed Ghalawnji">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">محمد غلاونجي</h5>
+                                <p class="card-text text-muted">مطور الواجهة الخلفية</p>
+                                <span class="username">mohammed_303279</span>
+                                <p class="small mt-2">خبير في بناء أنظمة قوية للخادم وهندسة قواعد البيانات.</p>
+                                <div class="social-icons">
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rami Ibrahim -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card team-card h-100">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                                class="card-img-top team-img" alt="Rami Ibrahim">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">رامي إبراهيم</h5>
+                                <p class="card-text text-muted">مطور الواجهة الأمامية</p>
+                                <span class="username">rami_301609</span>
+                                <p class="small mt-2">متخصص في إنشاء واجهات مستخدم تفاعلية ومتجاوبة.</p>
+                                <div class="social-icons">
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Alaa Al-Abdullah -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card team-card h-100">
+                            <img src="https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                                class="card-img-top team-img" alt="Alaa Al-Abdullah">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">آلاء العبدالله</h5>
+                                <p class="card-text text-muted">استراتيجية المحتوى</p>
+                                <span class="username">alaa_317160</span>
+                                <p class="small mt-2">تطوير استراتيجيات محتوى جذابة تتواصل مع مجتمعنا.</p>
+                                <div class="social-icons">
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fab fa-medium"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ahmad Salakh -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card team-card h-100">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                                class="card-img-top team-img" alt="Ahmad Salakh">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">أحمد سلاخ</h5>
+                                <p class="card-text text-muted">محلل البيانات</p>
+                                <span class="username">ahmad_286451</span>
+                                <p class="small mt-2">تحويل البيانات إلى رؤى قابلة للتنفيذ لدفع قرارات العمل.</p>
+                                <div class="social-icons">
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fab fa-tableau"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ===== FOOTER ===== -->
+    <footer class="text-center text-white py-5 mt-5">
+        <div class="container">
+            <h5 class="fw-bold mb-3">CityPulse – اكتشف ما يحدث حولك</h5>
+
+            <p class="mb-1">
+                <i class="fa-solid fa-location-dot me-2"></i>
+                حماة، سوريا – شارع الجيش، بجوار المركز الثقافي
+            </p>
+            <p class="mb-1">
+                <i class="fa-solid fa-envelope me-2"></i>
+                info@citypulse.com
+            </p>
+            <p class="mb-3">
+                <i class="fa-solid fa-phone me-2"></i>
+                980 444 222 963+
+            </p>
+
+            <div class="social-links mb-3">
+                <a href="#" class="mx-2 text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
+                <a href="#" class="mx-2 text-white"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="#" class="mx-2 text-white"><i class="fab fa-x-twitter fa-lg"></i></a>
+                <a href="#" class="mx-2 text-white"><i class="fab fa-youtube fa-lg"></i></a>
+            </div>
+
+            <p class="small-credits mb-0">
+                © 2025 <span class="fw-semibold">CityPulse</span>. جميع الحقوق محفوظة.
+                | صمم بكل ❤️ في سوريا.
+            </p>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="./assets/js/LangSwap.js"></script>
+</body>
+
+</html>

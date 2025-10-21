@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>CityPulse | اتصل بنا</title>
+
+    <!-- === EXTERNAL DEPENDENCIES === -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- === CUSTOM STYLESHEETS === -->
+    <link rel="stylesheet" href="./assets/css/contact-styling.css">
+    <link rel="stylesheet" href="assets/css/langSwap.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css">
+</head>
+
+<body>
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="./index.html">CityPulse</a>
+            <!-- Language Selector -->
+            <div class="language-dropdown dropdown">
+                <button class="language-selector dropdown-toggle d-flex align-items-center" type="button"
+                    id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="https://flagcdn.com/w40/sy.png" alt="syria">
+                    <span>العربية</span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                    <li>
+                        <a class="dropdown-item language-option d-flex align-items-center" href="#" data-lang="ar">
+                            <img src="https://flagcdn.com/w40/sy.png" alt="syria">
+                            <span>العربية</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item language-option d-flex align-items-center" href="#" data-lang="en">
+                            <img src="https://flagcdn.com/w40/us.png" alt="usa">
+                            <span>English</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
+                    <li class="nav-item"><a class="nav-link" href="events.html">الفعاليات</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">من نحن</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html">اتصل بنا</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== FLOATING ACTION BUTTONS ===== -->
+    <div class="floating-buttons">
+        <button class="floating-btn dark-mode-toggle" id="darkModeToggle" title="تبديل الوضع الليلي">
+            <i class="fas fa-moon"></i>
+        </button>
+        <button class="floating-btn scroll-to-top" id="scrollToTop" title="الانتقال إلى الأعلى">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+        <button class="floating-btn scroll-to-bottom" id="scrollToBottom" title="الانتقال إلى الأسفل">
+            <i class="fas fa-chevron-down"></i>
+        </button>
+    </div>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="container mt-5 pt-4">
+        <!-- Page Header -->
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h1 class="fw-bold text-primary mb-3">اتصل بنا</h1>
+                <p class="lead text-muted">نحن هنا لمساعدتك! تواصل معنا لأي استفسارات أو ملاحظات</p>
+            </div>
+        </div>
+
+        <div class="row g-5">
+            <!-- Contact Form -->
+            <div class="col-lg-8">
+                <div class="card shadow-sm contact-form-card">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0"><i class="fas fa-envelope me-2"></i>أرسل لنا رسالة</h5>
+                    </div>
+                    <div class="card-body p-4">
+                        <form id="contactForm" novalidate>
+                            <div id="contactAlert"></div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="contactName" class="form-label">الاسم الكامل <span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="contactName" required
+                                        placeholder="أدخل اسمك الكامل">
+                                    <div class="invalid-feedback">يرجى إدخال اسمك الكامل</div>
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <label for="contactEmail" class="form-label">البريد الإلكتروني <span
+                                            class="text-danger">*</span></label>
+                                    <input type="email" class="form-control" id="contactEmail" required
+                                        placeholder="example@email.com">
+                                    <div class="invalid-feedback">يرجى إدخال بريد إلكتروني صحيح</div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="contactSubject" class="form-label">الموضوع <span
+                                        class="text-danger">*</span></label>
+                                <select class="form-select" id="contactSubject" required>
+                                    <option value="" selected disabled>اختر نوع الاستفسار</option>
+                                    <option value="general">استفسار عام</option>
+                                    <option value="event">استفسار عن فعالية</option>
+                                    <option value="booking">استفسار عن حجز</option>
+                                    <option value="technical">مشكلة تقنية</option>
+                                    <option value="partnership">شراكة وتعاون</option>
+                                    <option value="other">أخرى</option>
+                                </select>
+                                <div class="invalid-feedback">يرجى اختيار موضوع</div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="contactMessage" class="form-label">الرسالة <span
+                                        class="text-danger">*</span></label>
+                                <textarea class="form-control" id="contactMessage" rows="6" required
+                                    placeholder="اكتب رسالتك هنا..."></textarea>
+                                <div class="invalid-feedback">يرجى إدخال رسالتك</div>
+                                <div class="form-text">الحد الأقصى 1000 حرف</div>
+                            </div>
+
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="contactNewsletter">
+                                <label class="form-check-label" for="contactNewsletter">
+                                    أرغب في استلام آخر الأخبار والعروض من CityPulse
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-lg w-100">
+                                <i class="fas fa-paper-plane me-2"></i>إرسال الرسالة
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Company Information -->
+            <div class="col-lg-4">
+                <!-- Contact Info -->
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header bg-white">
+                        <h5 class="mb-0"><i class="fas fa-info-circle me-2 text-primary"></i>معلومات الاتصال</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="contact-info-item mb-3">
+                            <div class="d-flex align-items-center">
+                                <div class="contact-icon bg-primary text-white">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h6 class="mb-1">العنوان</h6>
+                                    <p class="mb-0 text-muted">شارع الجيش، بجوار المركز الثقافي، حماة، سوريا</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item mb-3">
+                            <div class="d-flex align-items-center">
+                                <div class="contact-icon bg-success text-white">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h6 class="mb-1">الهاتف</h6>
+                                    <p class="mb-0 text-muted">980 444 222 963+</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item mb-3">
+                            <div class="d-flex align-items-center">
+                                <div class="contact-icon bg-info text-white">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h6 class="mb-1">البريد الإلكتروني</h6>
+                                    <p class="mb-0 text-muted">info@citypulse.com</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="d-flex align-items-center">
+                                <div class="contact-icon bg-warning text-white">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h6 class="mb-1">ساعات العمل</h6>
+                                    <p class="mb-0 text-muted">الأحد - الخميس: 9:00 صباحاً - 6:00 مساءً</p>
+                                    <p class="mb-0 text-muted">الجمعة - السبت: مغلق</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="card shadow-sm">
+                    <div class="card-header bg-white">
+                        <h5 class="mb-0"><i class="fas fa-link me-2 text-primary"></i>روابط سريعة</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="list-group list-group-flush">
+                            <a href="events.html"
+                                class="list-group-item list-group-item-action d-flex align-items-center">
+                                <i class="fas fa-calendar-alt me-3 text-primary"></i>
+                                <span>تصفح الفعاليات القادمة</span>
+                            </a>
+                            <a href="about.html"
+                                class="list-group-item list-group-item-action d-flex align-items-center">
+                                <i class="fas fa-users me-3 text-success"></i>
+                                <span>تعرف على فريقنا</span>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+                                <i class="fas fa-question-circle me-3 text-info"></i>
+                                <span>الأسئلة الشائعة</span>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+                                <i class="fas fa-file-alt me-3 text-warning"></i>
+                                <span>شروط الخدمة</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-white text-center">
+                        <h4 class="mb-0 text-primary"><i class="fas fa-question-circle me-2"></i>الأسئلة الشائعة</h4>
+                        <p class="text-muted mt-2 mb-0">ابحث عن إجابات سريعة للأسئلة الشائعة حول فعالياتنا وخدماتنا</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="row mb-4">
+                            <div class="col-12">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="faqSearch"
+                                        placeholder="ابحث في الأسئلة الشائعة...">
+                                    <button class="btn btn-outline-secondary" type="button" id="clearSearch">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                    <span class="input-group-text bg-primary text-white">
+                                        <i class="fas fa-search"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion" id="faqAccordion">
+                            <!-- Booking & Tickets -->
+                            <div class="faq-category mb-4">
+                                <h5 class="text-primary mb-3"><i class="fas fa-ticket-alt me-2"></i>الحجوزات والتذاكر
+                                </h5>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#faq1">
+                                            كيف يمكنني حجز تذاكر للفعاليات؟
+                                        </button>
+                                    </h2>
+                                    <div id="faq1" class="accordion-collapse collapse show"
+                                        data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            يمكنك حجز التذاكر مباشرة من صفحة الفعالية بالضغط على زر "احجز الآن" ومتابعة
+                                            خطوات الحجز الإلكتروني. ستحتاج إلى تقديم معلومات الاتصال الخاصة بك وتفاصيل
+                                            الدفع لإكمال الحجز.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq2">
+                                            هل يمكنني إلغاء حجزي واسترداد المبلغ؟
+                                        </button>
+                                    </h2>
+                                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            نعم، يمكنك إلغاء حجزك والحصول على استرداد كامل إذا تم الإلغاء قبل 48 ساعة من
+                                            تاريخ الفعالية. للإلغاء خلال 48 ساعة، يتم تطبيق استرداد 50٪. لا تتوفر مبالغ
+                                            مستردة للإلغاءات التي تتم قبل أقل من 24 ساعة من الفعالية.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq3">
+                                            ما هي طرق الدفع التي تقبلونها؟
+                                        </button>
+                                    </h2>
+                                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            نحن نقبل طرق دفع متنوعة تشمل بطاقات الائتمان (فيزا، ماستركارد)، المحافظ
+                                            الرقمية، والتحويلات البنكية. تتم معالجة جميع المدفوعات بأمان من خلال بوابة
+                                            الدفع المشفرة الخاصة بنا.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq4">
+                                            هل يمكنني نقل تذكرتي لشخص آخر؟
+                                        </button>
+                                    </h2>
+                                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            نعم، التذاكر قابلة للتحويل. يرجى الاتصال بفريق الدعم قبل 24 ساعة على الأقل
+                                            من الفعالية مع معلومات الحضور الجديدة لنقل التذكرة.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Event Information -->
+                            <div class="faq-category mb-4">
+                                <h5 class="text-primary mb-3"><i class="fas fa-calendar-alt me-2"></i>معلومات الفعاليات
+                                </h5>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq5">
+                                            كيف يمكنني اقتراح فعالية جديدة؟
+                                        </button>
+                                    </h2>
+                                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            نرحب باقتراحاتك! يمكنك إرسال تفاصيل الفعالية المقترحة من خلال نموذج الاتصال
+                                            وسيقوم فريقنا بمراجعتها والرد عليك. يرجى تضمين نوع الفعالية، الجمهور
+                                            المتوقع، والتواريخ المقترحة.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq6">
+                                            كيف أعرف إذا كانت الفعالية مناسبة للأطفال؟
+                                        </button>
+                                    </h2>
+                                    <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            تشير كل صفحة فعالية بوضوح إلى الفئة العمرية الموصى بها. يتم وضع علامة على
+                                            الفعاليات المناسبة للعائلة بأيقونة عائلة. للوصفات العمرية المحددة، تحقق من
+                                            تفاصيل الفعالية أو اتصل بالمنظم.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq7">
+                                            ماذا يحدث إذا تم إلغاء فعالية؟
+                                        </button>
+                                    </h2>
+                                    <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            في حالة إلغاء الفعالية، سيتم إخطار جميع حاملي التذاكر فورًا عبر البريد
+                                            الإلكتروني والرسائل القصيرة. ستحصل على استرداد كامل تلقائيًا خلال 5-7 أيام
+                                            عمل، أو يمكنك اختيار نقل تذكرتك إلى تاريخ معاد.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq8">
+                                            هل الفعاليات متاحة للأشخاص ذوي الإعاقة؟
+                                        </button>
+                                    </h2>
+                                    <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            نعم، نحن نسعى لجعل جميع فعالياتنا متاحة. يرجى التحقق من صفحة الفعالية
+                                            المحددة للحصول على معلومات الوصول، أو اتصل بنا مسبقًا لمناقشة أي متطلبات
+                                            خاصة قد تكون لديك.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Technical Support -->
+                            <div class="faq-category mb-4">
+                                <h5 class="text-primary mb-3"><i class="fas fa-laptop-code me-2"></i>الدعم الفني</h5>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq9">
+                                            لم أتلق رسالة التأكيد بالبريد الإلكتروني. ماذا أفعل؟
+                                        </button>
+                                    </h2>
+                                    <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            أولاً، تحقق من مجلد البريد العشوائي أو غير المرغوب فيه. إذا لم تتمكن من
+                                            العثور عليه، اتصل بفريق الدعم مع تفاصيل حجزك. يمكننا إعادة إرسال التأكيد أو
+                                            مساعدتك في التحقق من حالة الحجز.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq10">
+                                            الموقع لا يعمل بشكل صحيح. كيف يمكنني الإبلاغ عن المشكلات؟
+                                        </button>
+                                    </h2>
+                                    <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            نعتذر عن الإزعاج. يرجى مسح ذاكرة التخزين المؤقت للمتصفح والمحاولة مرة أخرى.
+                                            إذا استمرت المشكلة، اتصل بفريق الدعم الفني مع تفاصيل حول المشكلة والمتصفح
+                                            ونوع الجهاز.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq11">
+                                            هل معلوماتي الشخصية آمنة؟
+                                        </button>
+                                    </h2>
+                                    <div id="faq11" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            بالتأكيد. نحن نأخذ خصوصية البيانات على محمل الجد ونلتزم بجميع لوائح حماية
+                                            البيانات ذات الصلة. يتم تشفير معلوماتك الشخصية ولا يتم مشاركتها مع أطراف
+                                            ثالثة دون موافقتك.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Partnership & Business -->
+                            <div class="faq-category">
+                                <h5 class="text-primary mb-3"><i class="fas fa-handshake me-2"></i>الشراكة والأعمال</h5>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq12">
+                                            كيف يمكن لشركتي الشراكة مع CityPulse؟
+                                        </button>
+                                    </h2>
+                                    <div id="faq12" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            نحن دائمًا منفتحون على شراكات جديدة! سواء كنت ترغب في رعاية الفعاليات، أو
+                                            التعاون في المحتوى، أو استكشاف فرص أخرى، يرجى التواصل من خلال نموذج استفسار
+                                            الشراكة. سيقوم فريقنا بجدولة اجتماع لمناقشة التعاون المحتمل.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq13">
+                                            هل تقدمون خصومات جماعية للفعاليات المؤسسية؟
+                                        </button>
+                                    </h2>
+                                    <div id="faq13" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            نعم، نقدم أسعارًا خاصة للحجوزات الجماعية التي تضم 10 أشخاص أو أكثر. تشمل
+                                            الحزم المؤسسية مزايا إضافية مثل المقاعد المحجوزة والمواد ذات العلامات
+                                            التجارية. اتصل بفريق المبيعات المؤسسي للحصول على عروض أسعار مخصصة.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq14">
+                                            هل يمكنني استضافة فعاليتي في قاعاتكم؟
+                                        </button>
+                                    </h2>
+                                    <div id="faq14" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            بالتأكيد! نحن نقدم خدمات تأجير القاعات وإدارة الفعاليات الكاملة. مساحاتنا
+                                            مناسبة لمختلف الفعاليات بما في ذلك المؤتمرات وورش العمل والتجمعات
+                                            الاجتماعية. اتصل بفريق القاعات للحصول على التوفر والأسعار.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Still have questions -->
+                        <div class="text-center mt-5 p-4 bg-light rounded">
+                            <h5 class="text-primary mb-3">لا تزال لديك أسئلة؟</h5>
+                            <p class="text-muted mb-3">لم تجد الإجابة التي تبحث عنها؟ يرجى التواصل مع فريقنا الودود.</p>
+                            <a href="#contactForm" class="btn btn-primary me-3">
+                                <i class="fas fa-envelope me-2"></i>اتصل بالدعم
+                            </a>
+                            <a href="tel:+963980444222" class="btn btn-outline-primary">
+                                <i class="fas fa-phone me-2"></i>اتصل الآن
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="text-center text-white py-5 mt-5" style="background:#212529">
+        <div class="container">
+            <h5 class="fw-bold mb-3">CityPulse – اكتشف ما يحدث حولك</h5>
+
+            <p class="mb-1"><i class="fa-solid fa-location-dot me-2"></i> حماة، سوريا – شارع الجيش، بجوار المركز الثقافي
+            </p>
+            <p class="mb-1"><i class="fa-solid fa-envelope me-2"></i> info@citypulse.com</p>
+            <p class="mb-3"><i class="fa-solid fa-phone me-2"></i> 980 444 222 963+</p>
+
+            <div class="social-links mb-3">
+                <a href="#" class="mx-2 text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
+                <a href="#" class="mx-2 text-white"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="#" class="mx-2 text-white"><i class="fab fa-x-twitter fa-lg"></i></a>
+                <a href="#" class="mx-2 text-white"><i class="fab fa-youtube fa-lg"></i></a>
+            </div>
+
+            <p class="small-credits mb-0">© 2025 <span class="fw-semibold">CityPulse</span>. جميع الحقوق محفوظة. | صمم
+                بكل ❤️ في سوريا.</p>
+        </div>
+    </footer>
+
+    <!-- Toast container -->
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+        <div id="successToast" class="toast align-items-center text-bg-success border-0" role="alert"
+            aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body" id="successToastMessage">تم إرسال الرسالة بنجاح!</div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                    aria-label="Close"></button>
+            </div>
+        </div>
+
+        <div id="errorToast" class="toast align-items-center text-bg-danger border-0" role="alert" aria-live="assertive"
+            aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body" id="errorToastMessage">خطأ في إرسال الرسالة</div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                    aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="./assets/js/contact-script.js"></script>
+    <script src="./assets/js/LangSwap.js"></script>
+</body>
+
+</html>

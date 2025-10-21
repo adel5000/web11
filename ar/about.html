@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>من نحن - CityPulse</title>
+
+    <!-- Bootstrap & FontAwesome -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/about-style.css">
+    <link rel="stylesheet" href="assets/css/langSwap.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css">
+</head>
+
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="./index.html">CityPulse</a>
+            <!-- Language Selector -->
+            <div class="language-dropdown dropdown">
+                <button class="language-selector dropdown-toggle d-flex align-items-center" type="button"
+                    id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="https://flagcdn.com/w40/sy.png" alt="syria">
+                    <span>العربية</span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                    <li>
+                        <a class="dropdown-item language-option d-flex align-items-center" href="#" data-lang="ar">
+                            <img src="https://flagcdn.com/w40/sy.png" alt="syria">
+                            <span>العربية</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item language-option d-flex align-items-center" href="#" data-lang="en">
+                            <img src="https://flagcdn.com/w40/us.png" alt="usa">
+                            <span>English</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
+                    <li class="nav-item"><a class="nav-link" href="events.html">الفعاليات</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html">من نحن</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">اتصل بنا</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- ===== FLOATING ACTION BUTTONS ===== -->
+    <div class="floating-buttons">
+        <button class="floating-btn dark-mode-toggle" id="darkModeToggle" title="تبديل الوضع الليلي">
+            <i class="fas fa-moon"></i>
+        </button>
+        <button class="floating-btn scroll-to-top" id="scrollToTop" title="الانتقال إلى الأعلى">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+        <button class="floating-btn scroll-to-bottom" id="scrollToBottom" title="الانتقال إلى الأسفل">
+            <i class="fas fa-chevron-down"></i>
+        </button>
+    </div>
+    <!-- ===== ABOUT CONTENT ===== -->
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="about-hero text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-4">من نحن في CityPulse</h1>
+                    <p class="lead mb-4">ربط المجتمعات من خلال الفعاليات الاستثنائية</p>
+                    <p>CityPulse هي المنصة الرائدة لاكتشاف الفعاليات في سوريا، مكرسة لجمع الناس معًا من خلال التجارب
+                        الثقافية والتعليمية والترفيهية.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission & Vision -->
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="section-card h-100">
+                    <div class="feature-icon mx-auto">
+                        <i class="fas fa-bullseye text-white fa-lg"></i>
+                    </div>
+                    <h3 class="text-center mb-3">مهمتنا</h3>
+                    <p class="text-center">إنشاء نظام بيئي نابض بالحياة حيث يتصل منظمي الفعاليات والحضور بسلاسة، وتعزيز
+                        التبادل الثقافي ومشاركة المجتمع في جميع أنحاء سوريا.</p>
+                    <ul class="policy-list mt-4">
+                        <li>سد الفجوة بين منظمي الفعاليات والمجتمع</li>
+                        <li>تعزيز التنوع الثقافي والتعبير الفني</li>
+                        <li>دعم الأعمال المحلية والصناعات الإبداعية</li>
+                        <li>جعل اكتشاف الفعاليات في متناول الجميع</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-6 mb-4">
+                <div class="section-card h-100">
+                    <div class="feature-icon mx-auto">
+                        <i class="fas fa-eye text-white fa-lg"></i>
+                    </div>
+                    <h3 class="text-center mb-3">رؤيتنا</h3>
+                    <p class="text-center">أن نصبح المنصة الأكثر موثوقية للفعاليات في سوريا، ونغير طريقة اكتشاف الناس
+                        ومشاركتهم في فعاليات المجتمع مع الحفاظ على تراثنا الثقافي الغني وتعزيزه.</p>
+                    <ul class="policy-list mt-4">
+                        <li>التحول الرقمي لصناعة الفعاليات في سوريا</li>
+                        <li>منصة وطنية تربط جميع المدن السورية</li>
+                        <li>الابتكار في تكنولوجيا الفعاليات وتجربة المستخدم</li>
+                        <li>النمو والتطوير المستدام للمجتمع</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Platform Purpose -->
+        <div class="section-card">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h2 class="mb-4">لماذا يوجد CityPulse</h2>
+                    <p>في بلد غني بالتنوع الثقافي والأهمية التاريخية، ولد CityPulse من حاجة بسيطة: إنشاء مركز موحد حيث
+                        يمكن للسوريين اكتشاف والمشاركة في الفعاليات التي تهمهم.</p>
+                    <p>نحن نؤمن أن الفعاليات لديها القدرة على:</p>
+                    <ul class="policy-list">
+                        <li>تعزيز الروابط المجتمعية والتماسك الاجتماعي</li>
+                        <li>الحفاظ على التراث الثقافي السوري والاحتفاء به</li>
+                        <li>دعم التعافي الاقتصادي من خلال السياحة والأعمال المحلية</li>
+                        <li>توفير منصات للتعبير الفني والإبداعي</li>
+                        <li>تقديم فرص التعليم والتطوير الشخصي</li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <div class="feature-icon mx-auto mb-3">
+                        <i class="fas fa-heart text-white fa-lg"></i>
+                    </div>
+                    <h4>المجتمع أولاً</h4>
+                    <p class="text-muted">كل ميزة نبنيها تخدم احتياجات مجتمعنا</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Section -->
+        <div class="section-card">
+            <h2 class="text-center mb-5">تعرف على فريقنا</h2>
+            <div class="row g-4">
+                <!-- Randa Deeb -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card team-card h-100">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                            class="card-img-top team-img" alt="راندا ديب">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">راندا ديب</h5>
+                            <p class="card-text text-muted">مصممة واجهات المستخدم</p>
+                            <span class="username">randa_284420</span>
+                            <p class="small mt-2">مصممة مبدعة تركز على إنشاء تجارب مستخدم بديهية وجميلة.</p>
+                            <div class="social-icons">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-dribbble"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mohammed Ghalawnji -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card team-card h-100">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                            class="card-img-top team-img" alt="محمد غلاونجي">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">محمد غلاونجي</h5>
+                            <p class="card-text text-muted">مطور الواجهة الخلفية</p>
+                            <span class="username">mohammed_303279</span>
+                            <p class="small mt-2">خبير في بناء أنظمة قوية للخادم وهندسة قواعد البيانات.</p>
+                            <div class="social-icons">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rami Ibrahim -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card team-card h-100">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                            class="card-img-top team-img" alt="رامي إبراهيم">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">رامي إبراهيم</h5>
+                            <p class="card-text text-muted">مطور الواجهة الأمامية</p>
+                            <span class="username">rami_301609</span>
+                            <p class="small mt-2">متخصص في إنشاء واجهات مستخدم تفاعلية ومتجاوبة.</p>
+                            <div class="social-icons">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alaa Al-Abdullah -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card team-card h-100">
+                        <img src="https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                            class="card-img-top team-img" alt="آلاء العبدالله">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">آلاء العبدالله</h5>
+                            <p class="card-text text-muted">استراتيجية المحتوى</p>
+                            <span class="username">alaa_317160</span>
+                            <p class="small mt-2">تطوير استراتيجيات محتوى جذابة تتواصل مع مجتمعنا.</p>
+                            <div class="social-icons">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-medium"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ahmad Salakh -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card team-card h-100">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                            class="card-img-top team-img" alt="أحمد سلاخ">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">أحمد سلاخ</h5>
+                            <p class="card-text text-muted">محلل البيانات</p>
+                            <span class="username">ahmad_286451</span>
+                            <p class="small mt-2">تحويل البيانات إلى رؤى قابلة للتنفيذ لدفع قرارات العمل.</p>
+                            <div class="social-icons">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fab fa-tableau"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Event Submission Policies -->
+        <div class="section-card">
+            <h2 class="mb-4">سياسات إرسال الفعاليات</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <h5><i class="fas fa-clipboard-check text-primary me-2"></i>متطلبات الإرسال</h5>
+                    <ul class="policy-list">
+                        <li>يجب أن تكون الفعاليات مفتوحة للجمهور</li>
+                        <li>وصف واضح وأهداف الفعالية</li>
+                        <li>معلومات دقيقة عن التاريخ والوقت والموقع</li>
+                        <li>تصنيف ووسم مناسب</li>
+                        <li>معلومات الاتصال لمنظمي الفعاليات</li>
+                        <li>صور عالية الجودة تمثل الفعالية</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <h5><i class="fas fa-clock text-primary me-2"></i>عملية المراجعة</h5>
+                    <ul class="policy-list">
+                        <li>يتم مراجعة جميع الفعاليات يدويًا خلال 24-48 ساعة</li>
+                        <li>التحقق من تفاصيل الفعالية ومصداقية المنظم</li>
+                        <li>فحص الامتثال لإرشادات المجتمع</li>
+                        <li>تقييم جودة معلومات الفعالية</li>
+                        <li>إشعار بالموافقة أو التعديلات المطلوبة</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Publishing Standards -->
+        <div class="section-card">
+            <h2 class="mb-4">معايير النشر والإرشادات</h2>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="text-center">
+                        <div class="feature-icon mx-auto mb-3">
+                            <i class="fas fa-shield-alt text-white"></i>
+                        </div>
+                        <h5>جودة المحتوى</h5>
+                        <p class="small">يجب أن تقدم الفعاليات معلومات واضحة ودقيقة وكاملة مع صور عالية الجودة.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="text-center">
+                        <div class="feature-icon mx-auto mb-3">
+                            <i class="fas fa-users text-white"></i>
+                        </div>
+                        <h5>احترام المجتمع</h5>
+                        <p class="small">يجب أن تحترم جميع الفعاليات التنوع الثقافي وتعزز بيئات شاملة وآمنة.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="text-center">
+                        <div class="feature-icon mx-auto mb-3">
+                            <i class="fas fa-gavel text-white"></i>
+                        </div>
+                        <h5>الامتثال القانوني</h5>
+                        <p class="small">يجب أن تلتزم الفعاليات بالقوانين واللوائح السورية، بما في ذلك التصاريح اللازمة.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="alert alert-info mt-4">
+                <h6><i class="fas fa-info-circle me-2"></i>إشعار مهم</h6>
+                <p class="mb-0">نحتفظ بالحق في رفض أو إزالة الفعاليات التي لا تفي بمعاييرنا، أو تحتوي على معلومات مضللة،
+                    أو تنتهك إرشادات مجتمعنا. قد تؤدي الانتهاكات المتكررة إلى تعليق حساب المنظم.</p>
+            </div>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="stats-section text-center">
+            <div class="row">
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="stat-number">+500</div>
+                    <p class="text-muted">فعالية مدرجة</p>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="stat-number">+25 ألف</div>
+                    <p class="text-muted">مستخدم نشط</p>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="stat-number">15</div>
+                    <p class="text-muted">مدينة مغطاة</p>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="stat-number">98%</div>
+                    <p class="text-muted">معدل الرضا</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Community Message -->
+        <div class="section-card text-center">
+            <h2 class="mb-4">رسالتنا للمجتمع</h2>
+            <p class="lead mb-4">"CityPulse هو أكثر من مجرد منصة للفعاليات - إنها حركة لإعادة ربط مجتمعاتنا، والاحتفاء
+                بتراثنا، وبناء مستقبل أكثر إشراقًا معًا من خلال التجارب المشتركة."</p>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <p>نؤمن بقوة الفعاليات في تحويل المجتمعات. سواء كان مهرجانًا ثقافيًا يحافظ على تقاليدنا، أو ورشة عمل
+                        تعليمية تبني المهارات، أو حفلة موسيقية تجلب الفرح - كل فعالية تساهم في النسيج الحيوي للمجتمع
+                        السوري.</p>
+                    <p>انضم إلينا في هذه الرحلة لإعادة الاكتشاف والاتصال. معًا، يمكننا أن ننبض بحياة جديدة في مدننا
+                        ونخلق ذكريات دائمة.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="text-center text-white py-5 mt-5" style="background:#212529">
+        <div class="container">
+            <h5 class="fw-bold mb-3">CityPulse – اكتشف ما يحدث حولك</h5>
+
+            <p class="mb-1"><i class="fa-solid fa-location-dot me-2"></i> حماة، سوريا – شارع الجيش، بجوار المركز الثقافي
+            </p>
+            <p class="mb-1"><i class="fa-solid fa-envelope me-2"></i> info@citypulse.com</p>
+            <p class="mb-3"><i class="fa-solid fa-phone me-2"></i> 980 444 222 963+</p>
+
+            <div class="social-links mb-3">
+                <a href="#" class="mx-2 text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
+                <a href="#" class="mx-2 text-white"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="#" class="mx-2 text-white"><i class="fab fa-x-twitter fa-lg"></i></a>
+                <a href="#" class="mx-2 text-white"><i class="fab fa-youtube fa-lg"></i></a>
+            </div>
+
+            <p class="small-credits mb-0">© 2025 <span class="fw-semibold">CityPulse</span>. جميع الحقوق محفوظة. | صمم
+                بكل ❤️ في سوريا.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // ====== DARK MODE FUNCTIONALITY ======
+
+        let darkModeToggle = document.getElementById('darkModeToggle')
+        let body = document.body
+
+        /**
+         * Apply dark mode with smooth transition
+         * @param {boolean} isDark - Whether to apply dark mode
+         */
+        function applyDarkMode(isDark) {
+            // Add transition class for smooth animation
+            body.classList.add('mode-transitioning')
+
+            // Small delay to ensure CSS transition starts
+            setTimeout(() => {
+                if (isDark) {
+                    body.classList.add('dark-mode')
+                    darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>'
+                    // Add animation class for the toggle button
+                    darkModeToggle.classList.add('dark-mode-active')
+                } else {
+                    body.classList.remove('dark-mode')
+                    darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>'
+                    darkModeToggle.classList.remove('dark-mode-active')
+                }
+
+                // Remove transition class after animation completes
+                setTimeout(() => {
+                    body.classList.remove('mode-transitioning')
+                }, 500)
+            }, 10)
+        }
+
+        /**
+         * Enhanced toggle function with animation
+         */
+        function toggleDarkMode() {
+            const willBeDarkMode = !body.classList.contains('dark-mode')
+
+            // Add click animation to toggle button
+            darkModeToggle.style.transform = 'scale(0.9)'
+            setTimeout(() => {
+                darkModeToggle.style.transform = 'scale(1)'
+            }, 150)
+
+            applyDarkMode(willBeDarkMode)
+            localStorage.setItem('darkMode', willBeDarkMode.toString())
+        }
+
+        // Check for saved dark mode preference
+        let isDarkMode = localStorage.getItem('darkMode') === 'true'
+
+        // Apply dark mode if previously enabled
+        applyDarkMode(isDarkMode)
+
+        // Toggle dark mode with smooth transition
+        darkModeToggle.addEventListener('click', toggleDarkMode)
+
+        // Add keyboard shortcut for dark mode (Alt + D)
+        document.addEventListener('keydown', e => {
+            if (e.altKey && e.key === 'd') {
+                e.preventDefault()
+                toggleDarkMode()
+            }
+        })
+
+        // ====== SMOOTH SCROLL FUNCTIONALITY ======
+
+        const scrollToTopBtn = document.getElementById('scrollToTop')
+        const scrollToBottomBtn = document.getElementById('scrollToBottom')
+
+        // Show/hide scroll buttons based on scroll position
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY
+            const windowHeight = window.innerHeight
+            const documentHeight = document.documentElement.scrollHeight
+
+            // Show scroll to top button when scrolled down
+            if (scrollY > 300) {
+                scrollToTopBtn.style.display = 'flex'
+            } else {
+                scrollToTopBtn.style.display = 'none'
+            }
+
+            // Show scroll to bottom button when not at bottom
+            if (scrollY + windowHeight < documentHeight - 100) {
+                scrollToBottomBtn.style.display = 'flex'
+            } else {
+                scrollToBottomBtn.style.display = 'none'
+            }
+        })
+
+        // Scroll to top function
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            })
+        })
+
+        // Scroll to bottom function
+        scrollToBottomBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: document.documentElement.scrollHeight,
+                behavior: 'smooth'
+            })
+        })
+    </script>
+    <script src="./assets/js/LangSwap.js"></script>
+</body>
+
+</html>
