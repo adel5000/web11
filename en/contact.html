@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>CityPulse | Contact Us</title>
+
+    <!-- === EXTERNAL DEPENDENCIES === -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- === CUSTOM STYLESHEETS === -->
+    <link rel="stylesheet" href="./assets/css/contact-styling.css">
+    <link rel="stylesheet" href="assets/css/langSwap.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css">
+</head>
+
+<body>
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="./index.html">CityPulse</a>
+            <!-- Language Selector -->
+            <div class="language-dropdown dropdown">
+                <button class="language-selector dropdown-toggle d-flex align-items-center" type="button"
+                    id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="https://flagcdn.com/w40/us.png" alt="usa">
+                    <span>English</span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                    <li>
+                        <a class="dropdown-item language-option d-flex align-items-center" href="#" data-lang="ar">
+                            <img src="https://flagcdn.com/w40/sy.png" alt="syria">
+                            <span>العربية</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item language-option d-flex align-items-center" href="#" data-lang="en">
+                            <img src="https://flagcdn.com/w40/us.png" alt="usa">
+                            <span>English</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== FLOATING ACTION BUTTONS ===== -->
+    <div class="floating-buttons">
+        <button class="floating-btn dark-mode-toggle" id="darkModeToggle" title="Toggle Dark Mode">
+            <i class="fas fa-moon"></i>
+        </button>
+        <button class="floating-btn scroll-to-top" id="scrollToTop" title="Scroll to Top">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+        <button class="floating-btn scroll-to-bottom" id="scrollToBottom" title="Scroll to Bottom">
+            <i class="fas fa-chevron-down"></i>
+        </button>
+    </div>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="container mt-5 pt-4">
+        <!-- Page Header -->
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h1 class="fw-bold text-primary mb-3">Contact Us</h1>
+                <p class="lead text-muted">We're here to help! Reach out to us for any inquiries or feedback</p>
+            </div>
+        </div>
+
+        <div class="row g-5">
+            <!-- Contact Form -->
+            <div class="col-lg-8">
+                <div class="card shadow-sm contact-form-card">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0"><i class="fas fa-envelope me-2"></i>Send us a Message</h5>
+                    </div>
+                    <div class="card-body p-4">
+                        <form id="contactForm" novalidate>
+                            <div id="contactAlert"></div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="contactName" class="form-label">Full Name <span
+                                            class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="contactName" required
+                                        placeholder="Enter your full name">
+                                    <div class="invalid-feedback">Please enter your full name</div>
+                                </div>
+
+                                <div class="col-md-6 mb-3">
+                                    <label for="contactEmail" class="form-label">Email Address <span
+                                            class="text-danger">*</span></label>
+                                    <input type="email" class="form-control" id="contactEmail" required
+                                        placeholder="example@email.com">
+                                    <div class="invalid-feedback">Please enter a valid email address</div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="contactSubject" class="form-label">Subject <span
+                                        class="text-danger">*</span></label>
+                                <select class="form-select" id="contactSubject" required>
+                                    <option value="" selected disabled>Select inquiry type</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="event">Event Inquiry</option>
+                                    <option value="booking">Booking Inquiry</option>
+                                    <option value="technical">Technical Issue</option>
+                                    <option value="partnership">Partnership & Collaboration</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <div class="invalid-feedback">Please select a subject</div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="contactMessage" class="form-label">Message <span
+                                        class="text-danger">*</span></label>
+                                <textarea class="form-control" id="contactMessage" rows="6" required
+                                    placeholder="Type your message here..."></textarea>
+                                <div class="invalid-feedback">Please enter your message</div>
+                                <div class="form-text">Maximum 1000 characters</div>
+                            </div>
+
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="contactNewsletter">
+                                <label class="form-check-label" for="contactNewsletter">
+                                    I'd like to receive latest news and offers from CityPulse
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-lg w-100">
+                                <i class="fas fa-paper-plane me-2"></i>Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Company Information -->
+            <div class="col-lg-4">
+                <!-- Contact Info -->
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header bg-white">
+                        <h5 class="mb-0"><i class="fas fa-info-circle me-2 text-primary"></i>Contact Information</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="contact-info-item mb-3">
+                            <div class="d-flex align-items-center">
+                                <div class="contact-icon bg-primary text-white">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h6 class="mb-1">Address</h6>
+                                    <p class="mb-0 text-muted">Al-Jaish Street, Near Cultural Center, Hama, Syria</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item mb-3">
+                            <div class="d-flex align-items-center">
+                                <div class="contact-icon bg-success text-white">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h6 class="mb-1">Phone</h6>
+                                    <p class="mb-0 text-muted">+963 980 444 222</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item mb-3">
+                            <div class="d-flex align-items-center">
+                                <div class="contact-icon bg-info text-white">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h6 class="mb-1">Email</h6>
+                                    <p class="mb-0 text-muted">info@citypulse.com</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="d-flex align-items-center">
+                                <div class="contact-icon bg-warning text-white">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h6 class="mb-1">Working Hours</h6>
+                                    <p class="mb-0 text-muted">Sunday - Thursday: 9:00 AM - 6:00 PM</p>
+                                    <p class="mb-0 text-muted">Friday - Saturday: Closed</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="card shadow-sm">
+                    <div class="card-header bg-white">
+                        <h5 class="mb-0"><i class="fas fa-link me-2 text-primary"></i>Quick Links</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="list-group list-group-flush">
+                            <a href="events.html"
+                                class="list-group-item list-group-item-action d-flex align-items-center">
+                                <i class="fas fa-calendar-alt me-3 text-primary"></i>
+                                <span>Browse Upcoming Events</span>
+                            </a>
+                            <a href="about.html"
+                                class="list-group-item list-group-item-action d-flex align-items-center">
+                                <i class="fas fa-users me-3 text-success"></i>
+                                <span>Meet Our Team</span>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+                                <i class="fas fa-question-circle me-3 text-info"></i>
+                                <span>FAQ</span>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+                                <i class="fas fa-file-alt me-3 text-warning"></i>
+                                <span>Terms of Service</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-white text-center">
+                        <h4 class="mb-0 text-primary"><i class="fas fa-question-circle me-2"></i>Frequently Asked
+                            Questions</h4>
+                        <p class="text-muted mt-2 mb-0">Find quick answers to common questions about our events and
+                            services</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="row mb-4">
+                            <div class="col-12">
+                                <div class="input-group">
+                                    <span class="input-group-text bg-primary text-white">
+                                        <i class="fas fa-search"></i>
+                                    </span>
+                                    <input type="text" class="form-control" id="faqSearch" placeholder="Search FAQs...">
+                                    <button class="btn btn-outline-secondary" type="button" id="clearSearch">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion" id="faqAccordion">
+                            <!-- Booking & Tickets -->
+                            <div class="faq-category mb-4">
+                                <h5 class="text-primary mb-3"><i class="fas fa-ticket-alt me-2"></i>Booking & Tickets
+                                </h5>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#faq1">
+                                            How can I book tickets for events?
+                                        </button>
+                                    </h2>
+                                    <div id="faq1" class="accordion-collapse collapse show"
+                                        data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            You can book tickets directly from the event page by clicking the "Book Now"
+                                            button and following the online booking steps. You'll need to provide your
+                                            contact information and payment details to complete the reservation.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq2">
+                                            Can I cancel my booking and get a refund?
+                                        </button>
+                                    </h2>
+                                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            Yes, you can cancel your booking and get a full refund if canceled 48 hours
+                                            before the event date. For cancellations within 48 hours, a 50% refund
+                                            applies.
+                                            No refunds are available for cancellations made less than 24 hours before
+                                            the event.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq3">
+                                            What payment methods do you accept?
+                                        </button>
+                                    </h2>
+                                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            We accept various payment methods including credit cards (Visa, MasterCard),
+                                            digital wallets, and bank transfers. All payments are processed securely
+                                            through our encrypted payment gateway.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq4">
+                                            Can I transfer my ticket to someone else?
+                                        </button>
+                                    </h2>
+                                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            Yes, tickets are transferable. Please contact our support team at least 24
+                                            hours
+                                            before the event with the new attendee's information to transfer the ticket.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Event Information -->
+                            <div class="faq-category mb-4">
+                                <h5 class="text-primary mb-3"><i class="fas fa-calendar-alt me-2"></i>Event Information
+                                </h5>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq5">
+                                            How can I suggest a new event?
+                                        </button>
+                                    </h2>
+                                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            We welcome your suggestions! You can send details of your proposed event
+                                            through
+                                            our contact form and our team will review it and get back to you. Please
+                                            include
+                                            event type, expected audience, and proposed dates.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq6">
+                                            How do I know if an event is suitable for children?
+                                        </button>
+                                    </h2>
+                                    <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            Each event page clearly indicates the recommended age group. Family-friendly
+                                            events
+                                            are marked with a family icon. For specific age recommendations, check the
+                                            event
+                                            details or contact the organizer.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq7">
+                                            What happens if an event is canceled?
+                                        </button>
+                                    </h2>
+                                    <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            In case of event cancellation, all ticket holders will be notified
+                                            immediately
+                                            via email and SMS. You'll receive a full refund automatically within 5-7
+                                            business days,
+                                            or you can choose to transfer your ticket to a rescheduled date.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq8">
+                                            Are events accessible for people with disabilities?
+                                        </button>
+                                    </h2>
+                                    <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            Yes, we strive to make all our events accessible. Please check the specific
+                                            event
+                                            page for accessibility information, or contact us in advance to discuss any
+                                            special requirements you may have.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Technical Support -->
+                            <div class="faq-category mb-4">
+                                <h5 class="text-primary mb-3"><i class="fas fa-laptop-code me-2"></i>Technical Support
+                                </h5>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq9">
+                                            I didn't receive my confirmation email. What should I do?
+                                        </button>
+                                    </h2>
+                                    <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            First, check your spam or junk folder. If you still can't find it, contact
+                                            our
+                                            support team with your booking details. We can resend the confirmation or
+                                            help
+                                            you verify your booking status.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq10">
+                                            The website isn't working properly. How can I report issues?
+                                        </button>
+                                    </h2>
+                                    <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            We apologize for the inconvenience. Please clear your browser cache and try
+                                            again.
+                                            If the issue persists, contact our technical support team with details about
+                                            the problem, your browser, and device type.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq11">
+                                            Is my personal information secure?
+                                        </button>
+                                    </h2>
+                                    <div id="faq11" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            Absolutely. We take data privacy seriously and comply with all relevant data
+                                            protection regulations. Your personal information is encrypted and never
+                                            shared
+                                            with third parties without your consent.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Partnership & Business -->
+                            <div class="faq-category">
+                                <h5 class="text-primary mb-3"><i class="fas fa-handshake me-2"></i>Partnership &
+                                    Business</h5>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq12">
+                                            How can my business partner with CityPulse?
+                                        </button>
+                                    </h2>
+                                    <div id="faq12" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            We're always open to new partnerships! Whether you want to sponsor events,
+                                            collaborate on content, or explore other opportunities, please reach out
+                                            through our partnership inquiry form. Our team will schedule a meeting to
+                                            discuss potential collaboration.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq13">
+                                            Do you offer group discounts for corporate events?
+                                        </button>
+                                    </h2>
+                                    <div id="faq13" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            Yes, we offer special rates for group bookings of 10 or more people.
+                                            Corporate
+                                            packages include additional benefits like reserved seating and branded
+                                            materials.
+                                            Contact our corporate sales team for customized quotes.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#faq14">
+                                            Can I host my event at your venues?
+                                        </button>
+                                    </h2>
+                                    <div id="faq14" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            Certainly! We offer venue rental services and full event management. Our
+                                            spaces
+                                            are suitable for various events including conferences, workshops, and social
+                                            gatherings. Contact our venue team for availability and pricing.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Still have questions -->
+                        <div class="text-center mt-5 p-4 bg-light rounded">
+                            <h5 class="text-primary mb-3">Still have questions?</h5>
+                            <p class="text-muted mb-3">Can't find the answer you're looking for? Please reach out to our
+                                friendly team.</p>
+                            <a href="#contactForm" class="btn btn-primary me-3">
+                                <i class="fas fa-envelope me-2"></i>Contact Support
+                            </a>
+                            <a href="tel:+963980444222" class="btn btn-outline-primary">
+                                <i class="fas fa-phone me-2"></i>Call Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="text-center text-white py-5 mt-5" style="background:#212529">
+        <div class="container">
+            <h5 class="fw-bold mb-3">CityPulse – Discover What's Happening Around You</h5>
+
+            <p class="mb-1"><i class="fa-solid fa-location-dot me-2"></i> Hama, Syria – Al-Jaish Street, Near Cultural
+                Center</p>
+            <p class="mb-1"><i class="fa-solid fa-envelope me-2"></i> info@citypulse.com</p>
+            <p class="mb-3"><i class="fa-solid fa-phone me-2"></i> +963 980 444 222</p>
+
+            <div class="social-links mb-3">
+                <a href="#" class="mx-2 text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
+                <a href="#" class="mx-2 text-white"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="#" class="mx-2 text-white"><i class="fab fa-x-twitter fa-lg"></i></a>
+                <a href="#" class="mx-2 text-white"><i class="fab fa-youtube fa-lg"></i></a>
+            </div>
+
+            <p class="small-credits mb-0">© 2025 <span class="fw-semibold">CityPulse</span>. All Rights Reserved. |
+                Designed with ❤️ in Syria.</p>
+        </div>
+    </footer>
+
+    <!-- Toast container -->
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+        <div id="successToast" class="toast align-items-center text-bg-success border-0" role="alert"
+            aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body" id="successToastMessage">Message sent successfully!</div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                    aria-label="Close"></button>
+            </div>
+        </div>
+
+        <div id="errorToast" class="toast align-items-center text-bg-danger border-0" role="alert" aria-live="assertive"
+            aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body" id="errorToastMessage">Error sending message</div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                    aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="./assets/js/contact-script.js"></script>
+    <script src="./assets/js/LangSwap.js"></script>
+</body>
+
+</html>

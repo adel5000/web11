@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CityPulse | Events</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style-events.css">
+    <link rel="stylesheet" href="assets/css/langSwap.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css">
+</head>
+
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="./index.html">CityPulse</a>
+            <!-- Language Selector -->
+            <div class="language-dropdown dropdown">
+                <button class="language-selector dropdown-toggle d-flex align-items-center" type="button"
+                    id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="https://flagcdn.com/w40/us.png" alt="usa">
+                    <span>English</span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                    <li>
+                        <a class="dropdown-item language-option d-flex align-items-center" href="#" data-lang="ar">
+                            <img src="https://flagcdn.com/w40/sy.png" alt="syria">
+                            <span>العربية</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item language-option d-flex align-items-center" href="#" data-lang="en">
+                            <img src="https://flagcdn.com/w40/us.png" alt="usa">
+                            <span>English</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="events.html">Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- ===== FLOATING ACTION BUTTONS ===== -->
+    <div class="floating-buttons">
+        <button class="floating-btn dark-mode-toggle" id="darkModeToggle" title="Toggle Dark Mode">
+            <i class="fas fa-moon"></i>
+        </button>
+        <button class="floating-btn scroll-to-top" id="scrollToTop" title="Scroll to Top">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+        <button class="floating-btn scroll-to-bottom" id="scrollToBottom" title="Scroll to Bottom">
+            <i class="fas fa-chevron-down"></i>
+        </button>
+    </div>
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="container mt-5 pt-5">
+        <!-- Filter Bar -->
+        <div class="filter-bar mb-4">
+            <div class="row g-3 align-items-center">
+                <div class="col-md-4">
+                    <input type="text" id="searchInput" class="form-control" placeholder="Search for events...">
+                </div>
+                <div class="col-md-3">
+                    <select id="categoryFilter" class="form-select">
+                        <option value="">All Categories</option>
+                        <option value="music">Music</option>
+                        <option value="art">Art</option>
+                        <option value="tech">Tech</option>
+                        <option value="sports">Sports</option>
+                        <option value="food">Food</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <select id="locationFilter" class="form-select">
+                        <option value="">All Locations</option>
+                        <option value="aleppo">Aleppo</option>
+                        <option value="damascus">Damascus</option>
+                        <option value="hama">Hama</option>
+                        <option value="homs">Homs</option>
+                        <option value="latakia">Latakia</option>
+                        <option value="tartous">Tartous</option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <input type="date" id="dateFilter" class="form-control">
+                </div>
+            </div>
+        </div>
+
+        <!-- Events Grid -->
+        <div class="row g-4" id="eventsContainer">
+            <!-- Damascus Jazz Night -->
+            <div class="col-md-4 event-card" data-category="music" data-location="damascus" data-date="2025-10-12">
+                <div class="card h-100 shadow-sm">
+                    <img src="assets/img/event1.jpg" class="card-img-top" alt="Damascus Jazz Night">
+                    <div class="card-body">
+                        <h5 class="card-title">Damascus Jazz Night</h5>
+                        <p class="text-muted mb-1"><i class="fa-solid fa-calendar-days me-1"></i> Oct 12, 2025</p>
+                        <p class="text-muted mb-1"><i class="fa-solid fa-location-dot me-1"></i> Damascus, Syria</p>
+                        <p class="small">An unforgettable night of smooth jazz performances from top Syrian musicians.
+                        </p>
+                        <a href="event.html?event=1" class="btn btn-primary btn-sm mt-2">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hama Art & Culture Expo -->
+            <div class="col-md-4 event-card" data-category="art" data-location="hama" data-date="2025-10-15">
+                <div class="card h-100 shadow-sm">
+                    <img src="assets/img/event2.jpg" class="card-img-top" alt="Hama Art & Culture Expo">
+                    <div class="card-body">
+                        <h5 class="card-title">Hama Art & Culture Expo</h5>
+                        <p class="text-muted mb-1"><i class="fa-solid fa-calendar-days me-1"></i> Oct 15, 2025</p>
+                        <p class="text-muted mb-1"><i class="fa-solid fa-location-dot me-1"></i> Hama, Syria</p>
+                        <p class="small">Discover creative artworks and cultural exhibitions by local Syrian artists.
+                        </p>
+                        <a href="event.html?event=2" class="btn btn-primary btn-sm mt-2">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Aleppo Tech Forum -->
+            <div class="col-md-4 event-card" data-category="tech" data-location="aleppo" data-date="2025-11-05">
+                <div class="card h-100 shadow-sm">
+                    <img src="assets/img/event3.jpg" class="card-img-top" alt="Aleppo Tech Forum">
+                    <div class="card-body">
+                        <h5 class="card-title">Aleppo Tech Forum 2025</h5>
+                        <p class="text-muted mb-1"><i class="fa-solid fa-calendar-days me-1"></i> Nov 5, 2025</p>
+                        <p class="text-muted mb-1"><i class="fa-solid fa-location-dot me-1"></i> Aleppo, Syria</p>
+                        <p class="small">Join leading innovators and developers discussing the future of Syrian
+                            technology.</p>
+                        <a href="event.html?event=3" class="btn btn-primary btn-sm mt-2">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hama Marathon -->
+            <div class="col-md-4 event-card" data-category="sports" data-location="hama" data-date="2025-10-20">
+                <div class="card h-100 shadow-sm">
+                    <img src="assets/img/event4.jpg" class="card-img-top" alt="Hama Marathon">
+                    <div class="card-body">
+                        <h5 class="card-title">Hama City Marathon</h5>
+                        <p class="text-muted mb-1"><i class="fa-solid fa-calendar-days me-1"></i> Oct 20, 2025</p>
+                        <p class="text-muted mb-1"><i class="fa-solid fa-location-dot me-1"></i> Hama, Syria</p>
+                        <p class="small">Annual marathon event promoting fitness and community engagement.</p>
+                        <a href="event.html?event=4" class="btn btn-primary btn-sm mt-2">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Damascus Food Festival -->
+            <div class="col-md-4 event-card" data-category="food" data-location="damascus" data-date="2025-12-01">
+                <div class="card h-100 shadow-sm">
+                    <img src="assets/img/event5.jpg" class="card-img-top" alt="Damascus Food Festival">
+                    <div class="card-body">
+                        <h5 class="card-title">Damascus Food Festival</h5>
+                        <p class="text-muted mb-1"><i class="fa-solid fa-calendar-days me-1"></i> Dec 1, 2025</p>
+                        <p class="text-muted mb-1"><i class="fa-solid fa-location-dot me-1"></i> Damascus, Syria</p>
+                        <p class="small">Explore local dishes and culinary heritage in this delicious food event.</p>
+                        <a href="event.html?event=5" class="btn btn-primary btn-sm mt-2">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Latakia Indie Rock Concert -->
+            <div class="col-md-4 event-card" data-category="music" data-location="latakia" data-date="2025-11-22">
+                <div class="card h-100 shadow-sm">
+                    <img src="assets/img/event6.jpg" class="card-img-top" alt="Latakia Indie Rock Concert">
+                    <div class="card-body">
+                        <h5 class="card-title">Latakia Indie Rock Concert</h5>
+                        <p class="text-muted mb-1"><i class="fa-solid fa-calendar-days me-1"></i> Nov 22, 2025</p>
+                        <p class="text-muted mb-1"><i class="fa-solid fa-location-dot me-1"></i> Latakia, Syria</p>
+                        <p class="small">A seaside concert featuring top Syrian indie rock bands.</p>
+                        <a href="event.html?event=6" class="btn btn-primary btn-sm mt-2">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Modern Sculpture Expo – Damascus -->
+            <div class="col-md-4 event-card" data-category="art" data-location="damascus" data-date="2025-08-25">
+                <div class="card h-100 shadow-sm">
+                    <img src="assets/img/event7.jpg" class="card-img-top" alt="Modern Sculpture Expo – Damascus">
+                    <div class="card-body">
+                        <h5 class="card-title">Modern Sculpture Expo – Damascus</h5>
+                        <p class="text-muted mb-1"><i class="fa-solid fa-calendar-days me-1"></i> Aug 25, 2025</p>
+                        <p class="text-muted mb-1"><i class="fa-solid fa-location-dot me-1"></i> Damascus, Syria</p>
+                        <p class="small">Experience creative works by contemporary Syrian sculptors.</p>
+                        <a href="event.html?event=7" class="btn btn-primary btn-sm mt-2">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hackathon Syria 2025 -->
+            <div class="col-md-4 event-card" data-category="tech" data-location="damascus" data-date="2025-09-10">
+                <div class="card h-100 shadow-sm">
+                    <img src="assets/img/event8.jpg" class="card-img-top" alt="Hackathon Syria 2025">
+                    <div class="card-body">
+                        <h5 class="card-title">Hackathon Syria 2025</h5>
+                        <p class="text-muted mb-1"><i class="fa-solid fa-calendar-days me-1"></i> Sep 10, 2025</p>
+                        <p class="text-muted mb-1"><i class="fa-solid fa-location-dot me-1"></i> Damascus, Syria</p>
+                        <p class="small">Innovate and collaborate with the brightest young developers.</p>
+                        <a href="event.html?event=8" class="btn btn-primary btn-sm mt-2">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tartous Beach Volleyball Cup -->
+            <div class="col-md-4 event-card" data-category="sports" data-location="tartous" data-date="2025-08-15">
+                <div class="card h-100 shadow-sm">
+                    <img src="assets/img/event9.jpg" class="card-img-top" alt="Tartous Beach Volleyball Cup">
+                    <div class="card-body">
+                        <h5 class="card-title">Tartous Beach Volleyball Cup</h5>
+                        <p class="text-muted mb-1"><i class="fa-solid fa-calendar-days me-1"></i> Aug 15, 2025</p>
+                        <p class="text-muted mb-1"><i class="fa-solid fa-location-dot me-1"></i> Tartous, Syria</p>
+                        <p class="small">Join the competition or enjoy the summer vibes by the sea.</p>
+                        <a href="event.html?event=9" class="btn btn-primary btn-sm mt-2">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vegan Street Market – Damascus -->
+            <div class="col-md-4 event-card" data-category="food" data-location="damascus" data-date="2025-10-10">
+                <div class="card h-100 shadow-sm">
+                    <img src="assets/img/event10.jpg" class="card-img-top" alt="Vegan Street Market – Damascus">
+                    <div class="card-body">
+                        <h5 class="card-title">Vegan Street Market – Damascus</h5>
+                        <p class="text-muted mb-1"><i class="fa-solid fa-calendar-days me-1"></i> Oct 10, 2025</p>
+                        <p class="text-muted mb-1"><i class="fa-solid fa-location-dot me-1"></i> Damascus, Syria</p>
+                        <p class="small">Discover healthy and delicious vegan creations from local vendors.</p>
+                        <a href="event.html?event=10" class="btn btn-primary btn-sm mt-2">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Open Air Cinema – Aleppo Citadel -->
+            <div class="col-md-4 event-card" data-category="art" data-location="aleppo" data-date="2025-09-18">
+                <div class="card h-100 shadow-sm">
+                    <img src="assets/img/event11.jpg" class="card-img-top" alt="Open Air Cinema – Aleppo Citadel">
+                    <div class="card-body">
+                        <h5 class="card-title">Open Air Cinema – Aleppo Citadel</h5>
+                        <p class="text-muted mb-1"><i class="fa-solid fa-calendar-days me-1"></i> Sep 18, 2025</p>
+                        <p class="text-muted mb-1"><i class="fa-solid fa-location-dot me-1"></i> Aleppo, Syria</p>
+                        <p class="small">Watch classics under the stars near Syria’s historic landmark.</p>
+                        <a href="event.html?event=11" class="btn btn-primary btn-sm mt-2">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Startup Meetup – Homs -->
+            <div class="col-md-4 event-card" data-category="tech" data-location="homs" data-date="2025-11-08">
+                <div class="card h-100 shadow-sm">
+                    <img src="assets/img/event12.jpg" class="card-img-top" alt="Startup Meetup – Homs">
+                    <div class="card-body">
+                        <h5 class="card-title">Startup Meetup – Homs</h5>
+                        <p class="text-muted mb-1"><i class="fa-solid fa-calendar-days me-1"></i> Nov 8, 2025</p>
+                        <p class="text-muted mb-1"><i class="fa-solid fa-location-dot me-1"></i> Homs, Syria</p>
+                        <p class="small">Connect with Syrian entrepreneurs and investors for future ventures.</p>
+                        <a href="event.html?event=12" class="btn btn-primary btn-sm mt-2">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Farmers Market – Hama -->
+            <div class="col-md-4 event-card" data-category="food" data-location="hama" data-date="2025-09-25">
+                <div class="card h-100 shadow-sm">
+                    <img src="assets/img/event13.jpg" class="card-img-top" alt="Farmers Market – Hama">
+                    <div class="card-body">
+                        <h5 class="card-title">Farmers Market – Hama</h5>
+                        <p class="text-muted mb-1"><i class="fa-solid fa-calendar-days me-1"></i> Sep 25, 2025</p>
+                        <p class="text-muted mb-1"><i class="fa-solid fa-location-dot me-1"></i> Hama, Syria</p>
+                        <p class="small">Fresh local produce, crafts, and homemade delights.</p>
+                        <a href="event.html?event=13" class="btn btn-primary btn-sm mt-2">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charity Run – Damascus -->
+            <div class="col-md-4 event-card" data-category="sports" data-location="damascus" data-date="2025-10-05">
+                <div class="card h-100 shadow-sm">
+                    <img src="assets/img/event14.jpg" class="card-img-top" alt="Charity Run – Damascus">
+                    <div class="card-body">
+                        <h5 class="card-title">Charity Run – Damascus</h5>
+                        <p class="text-muted mb-1"><i class="fa-solid fa-calendar-days me-1"></i> Oct 5, 2025</p>
+                        <p class="text-muted mb-1"><i class="fa-solid fa-location-dot me-1"></i> Damascus, Syria</p>
+                        <p class="small">Support local causes while staying active with your community.</p>
+                        <a href="event.html?event=14" class="btn btn-primary btn-sm mt-2">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photography Workshop – Aleppo -->
+            <div class="col-md-4 event-card" data-category="art" data-location="aleppo" data-date="2025-11-02">
+                <div class="card h-100 shadow-sm">
+                    <img src="assets/img/event15.jpg" class="card-img-top" alt="Photography Workshop – Aleppo">
+                    <div class="card-body">
+                        <h5 class="card-title">Photography Workshop – Aleppo</h5>
+                        <p class="text-muted mb-1"><i class="fa-solid fa-calendar-days me-1"></i> Nov 2, 2025</p>
+                        <p class="text-muted mb-1"><i class="fa-solid fa-location-dot me-1"></i> Aleppo, Syria</p>
+                        <p class="small">Master photography techniques with professional Syrian artists.</p>
+                        <a href="event.html?event=15" class="btn btn-primary btn-sm mt-2">View Details</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="text-center text-white py-5 mt-5">
+        <div class="container">
+            <h5 class="fw-bold mb-3">CityPulse – Discover What's Happening Around You</h5>
+
+            <p class="mb-1">
+                <i class="fa-solid fa-location-dot me-2"></i>
+                Hama, Syria – Al-Jaish Street, Near Cultural Center
+            </p>
+            <p class="mb-1">
+                <i class="fa-solid fa-envelope me-2"></i>
+                info@citypulse.com
+            </p>
+            <p class="mb-3">
+                <i class="fa-solid fa-phone me-2"></i>
+                +963 980 444 222
+            </p>
+
+            <div class="social-links mb-3">
+                <a href="#" class="mx-2 text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
+                <a href="#" class="mx-2 text-white"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="#" class="mx-2 text-white"><i class="fab fa-x-twitter fa-lg"></i></a>
+                <a href="#" class="mx-2 text-white"><i class="fab fa-youtube fa-lg"></i></a>
+            </div>
+
+            <p class="small-credits mb-0">
+                © 2025 <span class="fw-semibold">CityPulse</span>. All Rights Reserved.
+                | Designed with ❤️ in Syria.
+            </p>
+        </div>
+    </footer>
+
+    <!-- ===== JS ===== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/events-js.js"></script>
+    <script src="./assets/js/LangSwap.js"></script>
+</body>
+
+</html>
